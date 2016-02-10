@@ -447,7 +447,7 @@ function populateWithCSV() {
 
     $.ajax( "/populateWithCSV",
         ({type: "POST",
-        data: inputString,
+        data: jsonString,
         contentType: "text/csv",
         dataType: "json",
         success: populate,
