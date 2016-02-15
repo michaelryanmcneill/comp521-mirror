@@ -206,6 +206,11 @@ function firstLoad(){
     $("#csv-file").change(populateWithCSVFile);
 }
 
+function downloadCSV() {
+    data = $('#csv-data')[0].value;
+    $("#saveCSV").attr('href','data:text/csv;charset=utf8,' + encodeURIComponent(data))
+}
+
 function createDefaultInputRows() {
     var purchases = $("#purchases")[0];
     var sales = $("#sales")[0];
@@ -445,6 +450,7 @@ function populateWithCSV() {
     var inputString = $('#csv-data').val();
     var jsonString = '{ "csvString":'+ inputString + ' }';
 
+    // test comment
     $.ajax( "/populateWithCSV",
         ({type: "POST",
         data: inputString,
@@ -477,7 +483,7 @@ function populateWithCSVFile(evt) {
 // Converts the input page into CSV and displays it on the CSV upload page.
 function convertToCSV() {
     var purchaseTable = $('#purchases')[0].rows;
-    var csvString = "Date, price per share, number of shares, buy or sell\n"
+    var csvString = ""
 
 // Skip the header line
     for (var i = 1; i< purchaseTable.length; i++) {
