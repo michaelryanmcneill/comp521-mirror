@@ -455,8 +455,9 @@ March 2015</p>
                 <div style="padding-top:10px">
                     <p>You can <button href="#!" class="btn btn-default" onclick="convertToCSV()">Convert to CSV</button>
                     to save your input data for later use.</p>
+                    <!-- Email Results - No Longer Needed
                     <p>You can have the calculation results sent to you:
-                    <div class="col-md-6"><input type="email" id="email" class="form-control" placeholder="Email Address for Results"><p>&nbsp;</p>
+                    <div class="col-md-6"><input type="email" id="email" class="form-control" placeholder="Email Address for Results"><p>&nbsp;</p> -->
                         <div class="col-md-3"></p>
 
                         <input type="radio" name = 'correction' id= "correction-none" value="V1">Matching
@@ -509,9 +510,12 @@ March 2015</p>
                 </p>
                 <p>or</p>
                 <p>.CSV text form:&nbsp;&nbsp;
-                <button href="#!" class="btn btn-default" onclick="populateWithCSV()">Input CSV Data</button>&nbsp;
-                    <button href="#!" class="btn btn-default" onclick="convertToCSV()">Save as .CSV</button>
+                    <button href="#!" class="btn btn-default" onclick="populateWithCSV()">Input CSV Data</button>&nbsp;
+                    <a href="#!" id="saveCSV" download="calc_input.csv">
+                        <button class="btn btn-default" onclick="downloadCSV()">Download as .CSV</button>
+                    </a>
                 </p>
+                 <p class="dataFormat" style="font-family: Verdana,Arial,sans-serif;font-size: 1em;margin-bottom: 0px;margin-left: 22px;">Date, price per share, number of shares, buy or sell</p>
                 <div class="indent" style="padding-top:10px">
                     <textarea id="csv-data" cols="50" rows="20"></textarea>
 
